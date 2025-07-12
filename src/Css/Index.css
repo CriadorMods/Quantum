@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+body{
+    font-family: Poppins;
+    background-color: #171725;
+    -webkit-user-select: none;
+    user-select: none;
+    overflow-x: hidden;
+}
+
+.moveGradient {
+  animation: moveGradient 13s linear infinite;
+  background-size: 200%;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+.ListImgZoom {
+    animation: Zoom 0.4s ease;
+}
+
+@keyframes Zoom {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
