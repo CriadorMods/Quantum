@@ -19,6 +19,7 @@ export default defineConfig({
     alias: {
       "@Components": path.resolve(__dirname, "src/Components"),
       "@Pages": path.resolve(__dirname, "src/Pages"),
+      "@Zustand": path.resolve(__dirname, "src/Zustand"),
       "@Css": path.resolve(__dirname, "src/Css")
     },
   },

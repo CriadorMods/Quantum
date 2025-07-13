@@ -28,6 +28,7 @@
     "paths": {
       "@Components/*": ["Components/*"],
       "@Pages/*": ["Pages/*"],
+      "@Zustand/*": ["Zustand/*"],
       "@Css/*": ["Css/*"]
     }
   },

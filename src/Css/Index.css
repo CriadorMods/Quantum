@@ -22,7 +22,7 @@ body{
   }
 }
 
-.ListImgZoom {
+.ZoomAnim {
     animation: Zoom 0.4s ease;
 }
 
