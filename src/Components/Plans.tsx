@@ -95,7 +95,7 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
         },
         {
             offerId: "66cccd642h52",
-            name: "Starter Bundle",
+            name: "Starter Pack",
             perks: [
                 "Rougue Agent - Outfit",
                 "Catalyst - Backbling",
@@ -144,10 +144,10 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
             }}
             >
                 <div className="z-10 mt-20 ml-8 relative text-white">
-                <span className="text-white/60 font-bold text-[1.15rem] md:text-[1.25rem]">
+                <span className="text-white/60 font-bold text-[1.15rem] leading-6 md:text-[1.25rem]">
                     {plans[OfferIndex].type}
                 </span>
-                <h1 className="text-white font-[700] uppercase text-[2rem] leading-6 md:text-[2.7rem] md:leading-10">
+                <h1 className="text-white font-[700] uppercase text-[2rem] leading-8 md:text-[2.7rem]">
                     {plans[OfferIndex].name}
                 </h1>
 

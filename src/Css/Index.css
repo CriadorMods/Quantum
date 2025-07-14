@@ -3,6 +3,7 @@
 body{
     font-family: Poppins;
     background-color: #171725;
+    -webkit-font-smoothing: antialiased;
     -webkit-user-select: none;
     user-select: none;
     overflow-x: hidden;
