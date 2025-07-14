@@ -39,6 +39,7 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
             bpopular: true,
             image: ContributorBG,
             miniImg: ContributorMini,
+            redirect: "https://youtu.be/E4WlUXrJgy4?si=RsDFnfJ2p5U6Jweh",
         },
         {
             offerId: "66ccca5d706dc",
@@ -55,6 +56,7 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
             bpopular: false,
             image: ContributorplusBG,
             miniImg: ContributorPMini,
+            redirect: "https://youtu.be/E4WlUXrJgy4?si=RsDFnfJ2p5U6Jweh",
         },
         {
             offerId: "66cccbf0e2ea8",
@@ -71,6 +73,7 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
             bpopular: false,
             image: ContributorplusplusBG,
             miniImg: ContributorPPMini,
+            redirect: "https://youtu.be/E4WlUXrJgy4?si=RsDFnfJ2p5U6Jweh",
         },
         {
             offerId: "66ccc429a130",
@@ -88,6 +91,7 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
             bpopular: false,
             image: ContributorMonthlyBG,
             miniImg: ContributorMMini,
+            redirect: "https://youtu.be/E4WlUXrJgy4?si=RsDFnfJ2p5U6Jweh",
         },
         {
             offerId: "66cccd642h52",
@@ -104,6 +108,7 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
             bpopular: false,
             image: StarterPackBG,
             miniImg: StarterPackMini,
+            redirect: "https://youtu.be/E4WlUXrJgy4?si=RsDFnfJ2p5U6Jweh",
         },
         {
             offerId: "66cccc426f300",
@@ -117,6 +122,7 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
             bpopular: false,
             image: DonatorBG,
             miniImg: DonatorMini,
+            redirect: "https://youtu.be/E4WlUXrJgy4?si=RsDFnfJ2p5U6Jweh",
         },
     ];
 
@@ -178,7 +184,10 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
                         </div>
                         }
                     </div>
-                    <button className="text-[#242424] bg-white opacity-95 border-none rounded-[10px] hover:bg-[#ffffffd2] transition p-3 text-center cursor-pointer">
+                    <button 
+                    onClick={() => window.open(plans[OfferIndex].redirect, "_blank")}
+                    className="text-[#242424] bg-white opacity-95 border-none rounded-[10px] hover:bg-[#ffffffd2] transition p-3 text-center cursor-pointer"
+                    >
                         <span className="uppercase font-[800] text-sm opacity-80">Get {plans[OfferIndex].name}</span>
                     </button>
                 </div>
@@ -191,12 +200,12 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
         </AnimatePresence>
 
             {/* Mini Plans thingy From here */}
-            <div className="relative w-[18.5%] h-[93.5%] flex flex-col gap-4 items-center">
+            <div className="relative w-[18.5%] h-[94%] flex flex-col gap-4 items-center">
                 {plans.map((plan, index) => (
                     <div
                     key={index}
                     onClick={() =>  setOfferIndex(index)}
-                    className="relative w-[84%] h-[5rem] rounded-[8px] bg-white/7 hover:bg-[#75757541] cursor-pointer transition-colors duration-200 ease flex flex-row items-center gap-3 px-3 overflow-hidden"
+                    className="relative w-[84%] h-[5rem] rounded-[8px] bg-white/7 hover:bg-[#75757541] cursor-pointer transition-colors duration-200 ease flex flex-row items-center gap-3 px-3 overflow-hidden sm:justify-center"
                     >
                         { OfferIndex === index &&
                         <motion.div

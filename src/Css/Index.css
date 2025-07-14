@@ -10,7 +10,6 @@ body{
 
 .moveGradient {
   animation: moveGradient 13s linear infinite;
-  background-size: 200%;
 }
 
 @keyframes moveGradient {
