@@ -37,3 +37,7 @@ body{
       transform: scale(1);
     }
   }
+
+.fuckingtailwind:hover {
+    background-color: rgba(117, 117, 117, 0.25);
+}

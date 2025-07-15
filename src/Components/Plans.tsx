@@ -129,7 +129,7 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
     const DiscountedPrice = plans[OfferIndex].discount > 0 ? Number(plans[OfferIndex].price - plans[OfferIndex].price * (plans[OfferIndex].discount / 100)).toFixed(2) : null;
 
     return (
-        <div className="relative flex items-center w-[73.75rem] h-[36.25rem] bg-black/20 rounded-[0.8rem] overflow-hidden">
+        <div className="relative flex items-center w-full md:w-[73.75rem] h-auto bg-black/20 rounded-[0.8rem] overflow-hidden">
         <AnimatePresence mode="wait">
             <motion.div 
             className="relative ml-4.5 flex flex-col justify-start items-start w-[80%] h-[94%] bg-black/20 rounded-[0.7rem] overflow-hidden"
@@ -205,14 +205,14 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
                     <div
                     key={index}
                     onClick={() =>  setOfferIndex(index)}
-                    className="relative w-[84%] h-[5rem] rounded-[8px] bg-white/7 hover:bg-[#75757541] cursor-pointer transition-colors duration-200 ease flex flex-row items-center gap-3 px-3 overflow-hidden sm:justify-center"
+                    className="relative w-[84%] h-[5rem] rounded-[8px] bg-white/7 fuckingtailwind cursor-pointer transition flex flex-row items-center gap-3 px-3 overflow-hidden sm:justify-center"
                     >
                         { OfferIndex === index &&
                         <motion.div
                         key={index}
                         initial={{ width: "0%" }}
                         animate={{ width: "100%" }}
-                        className="absolute top-0 left-0 h-full bg-[#404044]"
+                        className="absolute top-0 left-0 h-full bg-[#404044] "
                         transition={{
                             ease: "linear",
                             duration: 8
