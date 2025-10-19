@@ -205,7 +205,7 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
                     <div
                     key={index}
                     onClick={() =>  setOfferIndex(index)}
-                    className="relative w-[84%] h-[5rem] rounded-[8px] bg-white/7 fuckingtailwind cursor-pointer transition flex flex-row items-center gap-3 px-3 overflow-hidden sm:justify-center"
+                    className="relative w-[84%] h-[5rem] rounded-[8px] bg-white/7 hover:bg-white/12 cursor-pointer transition flex flex-row items-center gap-3 px-3 overflow-hidden sm:justify-center"
                     >
                         { OfferIndex === index &&
                         <motion.div
