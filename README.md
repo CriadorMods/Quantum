@@ -16,7 +16,7 @@ It’s simple, lightweight, and easy to tweak for your own project.
 ### ⚙️ Setup
 
 ```bash
-git clone https://github.com/yourusername/Quantum.git
+git clone https://github.com/CriadorMods/Quantum.git
 cd Quantum
 yarn install
 yarn dev
