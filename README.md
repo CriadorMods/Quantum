@@ -13,6 +13,18 @@ It’s simple, lightweight, and easy to tweak for your own project.
 
 ---
 
+ <details>
+  <summary>Preview</summary>
+  <br>
+  <img 
+    src="https://github.com/CriadorMods/Quantum/blob/main/src/assets/Preview-Quantum.png" 
+    alt="Quantum Preview" 
+    width="100%"
+    />
+</details>
+
+---
+
 ### ⚙️ Setup
 
 ```bash
