@@ -24,12 +24,9 @@
     "noUncheckedSideEffectImports": true,
 
     /* Proper Imports */
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
-      "@Components/*": ["Components/*"],
-      "@Pages/*": ["Pages/*"],
-      "@Zustand/*": ["Zustand/*"],
-      "@Css/*": ["Css/*"]
+      "@/*": ["src/*"]
     }
   },
   "include": ["src"]

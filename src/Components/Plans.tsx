@@ -2,23 +2,23 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Assets - Backgrounds
-import ContributorBG from "../assets/Backgrounds/contributorBasicBGv2.jpg";
-import ContributorplusBG from "../assets/Backgrounds/contributorPlusBGv2.jpg";
-import ContributorplusplusBG from "../assets/Backgrounds/ContributorPlusPlusBGv2.jpg";
-import ContributorMonthlyBG from "../assets/Backgrounds/contributorM.png";
-import DonatorBG from "../assets/Backgrounds/donatornew.jpg";
-import StarterPackBG from "../assets/Backgrounds/starterpack.jpg"
+import ContributorBG from "@/assets/Backgrounds/contributorBasicBGv2.jpg";
+import ContributorplusBG from "@/assets/Backgrounds/contributorPlusBGv2.jpg";
+import ContributorplusplusBG from "@/assets/Backgrounds/ContributorPlusPlusBGv2.jpg";
+import ContributorMonthlyBG from "@/assets/Backgrounds/contributorM.png";
+import DonatorBG from "@/assets/Backgrounds/donatornew.jpg";
+import StarterPackBG from "@/assets/Backgrounds/starterpack.jpg"
 
 // Assets - Mini Icons
-import ContributorMini from "../assets/Mini-Icons/contributorminiv2.png";
-import ContributorPMini from "../assets/Mini-Icons/contributorPminiv2.jpg";
-import ContributorPPMini from "../assets/Mini-Icons/contributorPPmini.jpg";
-import ContributorMMini from "../assets/Mini-Icons/ContributorMMini.jpg";
-import DonatorMini from "../assets/Mini-Icons/donatormini.jpg";
-import StarterPackMini from "../assets/Mini-Icons/starterpackmini.jpg";
+import ContributorMini from "@/assets/Mini-Icons/contributorminiv2.png";
+import ContributorPMini from "@/assets/Mini-Icons/contributorPminiv2.jpg";
+import ContributorPPMini from "@/assets/Mini-Icons/contributorPPmini.jpg";
+import ContributorMMini from "@/assets/Mini-Icons/ContributorMMini.jpg";
+import DonatorMini from "@/assets/Mini-Icons/donatormini.jpg";
+import StarterPackMini from "@/assets/Mini-Icons/starterpackmini.jpg";
 
 // Zustand
-import { useOffersStore } from "@Zustand/OffersStore";
+import { useOffersStore } from "@/Zustand/OffersStore";
 
 const Plans: React.FC = () => {
 const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
@@ -202,10 +202,10 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
             {/* Mini Plans thingy From here */}
             <div className="relative w-[18.5%] h-[94%] flex flex-col gap-4 items-center">
                 {plans.map((plan, index) => (
-                    <div
+                    <button
                     key={index}
                     onClick={() =>  setOfferIndex(index)}
-                    className="relative w-[84%] h-[5rem] rounded-[8px] bg-white/7 hover:bg-white/12 cursor-pointer transition flex flex-row items-center gap-3 px-3 overflow-hidden sm:justify-center"
+                    className="relative w-[84%] h-[5rem] rounded-lg bg-white/7 hover:bg-white/12 cursor-pointer transition flex flex-row items-center gap-2.5 px-3 overflow-hidden sm:justify-center"
                     >
                         { OfferIndex === index &&
                         <motion.div
@@ -227,10 +227,10 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
                         className={`w-10 h-14 rounded-[5px] brightness-95 ${OfferIndex === index ? "ZoomAnim" : ""}`}
                         draggable={false}
                         />
-                        <span className="hidden md:block text-white/90 z-10 text-[0.9rem] font-[500] w-full">
+                        <span className="hidden md:block text-white/90 z-10 text-[0.9rem] font-medium w-full">
                             {plan.name}
                         </span>
-                    </div> 
+                    </button> 
                 ))}
             </div>
         </div>

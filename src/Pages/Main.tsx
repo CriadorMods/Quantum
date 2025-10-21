@@ -1,12 +1,12 @@
 import React from "react";
 
 // Components
-import Note from "@Components/Note";
-import Plans from "@Components/Plans";
+import Note from "@/Components/Note";
+import Plans from "@/Components/Plans";
 
 const Main: React.FC = () => {
     return (
-        <div className="w-full h-full flex flex-col gap-10">
+        <div className="w-screen h-screen flex flex-col gap-8 justify-center items-center">
             <div className="w-full mt-[3rem] flex justify-center">
                 <div className="flex flex-col gap-1 text-center">
                 <h1 className="text-[2.75rem] md:text-[3.375rem] font-bold bg-gradient-to-r from-[#2ec87b] via-[#f25362] via-[#f9858c] via-[#e88d4f] to-[#b883f9] bg-[length:200%] bg-clip-text text-transparent moveGradient">
