@@ -144,7 +144,7 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
     const DiscountedPrice = plans[OfferIndex].discount > 0 ? Number(plans[OfferIndex].price - plans[OfferIndex].price * (plans[OfferIndex].discount / 100)).toFixed(2) : null;
 
     return (
-        <div className="relative flex items-center gap-3.5 w-full md:w-215 lg:w-245 xl:w-280 mb-4 p-3.5 h-auto bg-black/15 rounded-xl overflow-hidden">
+        <div className="relative flex items-center gap-3.5 w-full md:w-215 lg:w-245 xl:w-280 mb-4 p-3.5 h-auto bg-black/15 rounded-xl overflow-hidden transition-all duration-500">
         <AnimatePresence mode="wait">
             <motion.div 
             className="relative flex flex-col justify-start items-start p-8 w-full h-full bg-black/20 rounded-lg overflow-hidden"
@@ -220,7 +220,7 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
                     <button
                     key={index}
                     onClick={() =>  setOfferIndex(index)}
-                    className="relative w-full h-18 rounded-lg bg-white/5 hover:bg-white/10 group cursor-pointer transition-all flex items-center gap-2.5 px-2.5 overflow-hidden sm:justify-center"
+                    className="relative w-full h-full rounded-lg bg-white/5 hover:bg-white/10 group cursor-pointer transition-all flex items-center gap-2.5 p-2 overflow-hidden sm:justify-center"
                     >
                         { OfferIndex === index &&
                         <motion.div
@@ -239,7 +239,7 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
                         <img
                         src={plan.miniImg}
                         alt="MiniImage"
-                        className={`w-10 h-14 rounded-[5px] brightness-95 ${OfferIndex === index ? "ZoomAnim" : ""}`}
+                        className={`w-12 md:w-10 h-14 rounded-[5px] brightness-95 ${OfferIndex === index ? "ZoomAnim" : ""}`}
                         draggable={false}
                         />
                         <span className="hidden md:block text-white/90 z-10 text-[0.9rem] font-medium w-full">
