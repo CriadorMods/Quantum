@@ -32,7 +32,7 @@ const Main: React.FC = () => {
                         type: "tween",
                         duration: 0.5,
                     }}
-                    className="absolute -right-4 top-0 lg:-right-4 lg:bottom-0 blur-3xl rounded-full w-18 md:w-28 h-18 md:h-26" />
+                    className="absolute -right-4 top-0 blur-3xl rounded-full w-18 md:w-28 h-18 md:h-26" />
                 </>
             }
 
