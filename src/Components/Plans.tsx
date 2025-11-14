@@ -144,10 +144,10 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
     const DiscountedPrice = plans[OfferIndex].discount > 0 ? Number(plans[OfferIndex].price - plans[OfferIndex].price * (plans[OfferIndex].discount / 100)).toFixed(2) : null;
 
     return (
-        <div className="relative flex items-center w-full md:w-295 h-auto bg-black/15 rounded-xl overflow-hidden">
+        <div className="relative flex items-center gap-3.5 w-full md:w-215 lg:w-245 mb-4 p-3.5 h-auto bg-black/15 rounded-xl overflow-hidden">
         <AnimatePresence mode="wait">
             <motion.div 
-            className="relative ml-4.5 flex flex-col justify-start items-start w-[82%] h-[94%] bg-black/20 rounded-lg overflow-hidden"
+            className="relative flex flex-col justify-start items-start p-8 w-full h-full bg-black/20 rounded-lg overflow-hidden"
             key={OfferIndex}
             initial={{ y: -600 }}
             animate={{ y: 0 }}
@@ -158,7 +158,7 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
               damping: 16
             }}
             >
-                <div className="z-10 mt-20 ml-8 relative text-white">
+                <div className="z-10 relative text-white">
                 <span className="text-white/60 font-bold text-[1.15rem] leading-6 md:text-[1.25rem]">
                     {plans[OfferIndex].type}
                 </span>
@@ -183,13 +183,13 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
                 <img 
                 src={plans[OfferIndex].image}
                 alt="PlanBG" 
-                className="absolute w-full h-full brightness-84 object-cover"
+                className="absolute inset-0 w-full h-full brightness-84 object-cover"
                 draggable={false}
                 />
 
                 <div className="absolute left-8 bottom-8 flex flex-col">
                     <div className="flex flex-row gap-1">
-                        <span className={`font-semibold text-white opacity-95 text-lg ${DiscountedPrice ? "text-white/50 line-through font-medium" : "" }`}>${plans[OfferIndex].price}</span>
+                        <span className={`font-medeium text-white opacity-95 text-lg ${DiscountedPrice ? "text-white/50 line-through font-medium" : "" }`}>${plans[OfferIndex].price}</span>
                         { DiscountedPrice &&
                         <span className="font-semibold text-white opacity-95 text-lg">${DiscountedPrice}</span>
                         }
@@ -215,12 +215,12 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
         </AnimatePresence>
 
             {/* Mini Plans thingy From here */}
-            <div className="relative w-[18.5%] h-[94%] flex flex-col gap-4 items-center">
+            <div className="relative w-auto h-full flex flex-col gap-3.5 items-center">
                 {plans.map((plan, index) => (
                     <button
                     key={index}
                     onClick={() =>  setOfferIndex(index)}
-                    className="relative w-[84%] h-20 rounded-lg bg-white/5 hover:bg-white/10 group cursor-pointer transition-all flex flex-row items-center gap-2.5 px-2.5 overflow-hidden sm:justify-center"
+                    className="relative w-full h-full rounded-lg bg-white/5 hover:bg-white/10 group cursor-pointer transition-all flex items-center gap-2.5 px-2.5 overflow-hidden sm:justify-center"
                     >
                         { OfferIndex === index &&
                         <motion.div
@@ -246,7 +246,7 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
                             {plan.name}
                         </span>
 
-                        <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/12 to-transparent rotate-4 blur-md translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
+                        <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/12 to-transparent rotate-4 blur-md translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-600" />
                     </button> 
                 ))}
             </div>
