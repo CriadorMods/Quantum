@@ -17,8 +17,8 @@ const Main: React.FC = () => {
             {
                 <>
                     <motion.div 
-                    initial={{ backgroundColor: blurHex, filter: "blur(85px)", scale: 0.7, opacity: 0 }}
-                    animate={{ backgroundColor: blurHex, filter: "blur(85px)", scale: 1, opacity: 1 }}
+                    initial={{ backgroundColor: blurHex, filter: "blur(95px)", scale: 0.7, opacity: 0 }}
+                    animate={{ backgroundColor: blurHex, filter: "blur(95px)", scale: 1, opacity: 1 }}
                     transition={{
                         type: "tween",
                         duration: 0.5,
@@ -26,8 +26,8 @@ const Main: React.FC = () => {
                     className="absolute -left-4 -top-4 blur-3xl rounded-full w-18 md:w-28 h-18 md:h-26" />
 
                     <motion.div
-                    initial={{ backgroundColor: blurHex, filter: "blur(85px)", scale: 0.7, opacity: 0 }}
-                    animate={{ backgroundColor: blurHex, filter: "blur(85px)", scale: 1, opacity: 1 }}
+                    initial={{ backgroundColor: blurHex, filter: "blur(95px)", scale: 0.7, opacity: 0 }}
+                    animate={{ backgroundColor: blurHex, filter: "blur(95px)", scale: 1, opacity: 1 }}
                     transition={{
                         type: "tween",
                         duration: 0.5,

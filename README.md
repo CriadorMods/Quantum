@@ -9,7 +9,7 @@
 **Quantum** is a clean/simple donation page made with **React**, **TypeScript**, **Vite**, and **TailwindCSS**.  
 It’s simple, lightweight, and easy to tweak for your own project.
 
-> Rebuilt from the old ***Eclipse*** donation page (same look, better code).
+> Rebuilt from the old ***Eclipse*** donation page (improved looks, better code).
 
 ---
 
@@ -30,8 +30,8 @@ It’s simple, lightweight, and easy to tweak for your own project.
 ```bash
 git clone https://github.com/CriadorMods/Quantum.git
 cd Quantum
-yarn install
-yarn dev
+bun i
+bun vite
 ```
 
 Then open **http://localhost:5173**
@@ -41,8 +41,8 @@ Then open **http://localhost:5173**
 ### 🧱 Build
 
 ```bash
-yarn build
-yarn preview
+bun build
+bun preview
 ```
 
 ---

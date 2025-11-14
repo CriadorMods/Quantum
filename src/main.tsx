@@ -1,12 +1,28 @@
-import { StrictMode } from "react"
-import { createRoot } from "react-dom/client"
-import "@/Css/Index.css"
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "@/Css/Index.css";
 
 // Pages
-import Main from "@/Pages/Main"
+import Main from "@/Pages/Main";
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <Main />
-  </StrictMode>,
-)
+const root = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement
+);
+
+const App = () => {
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<Main />} />
+      </Routes>
+    </>
+  );
+};
+
+document.addEventListener("contextmenu", (e) => e.preventDefault());
+
+root.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
