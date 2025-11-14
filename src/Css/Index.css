@@ -2,7 +2,7 @@
 
 body{
     font-family: Poppins;
-    background-color: #171725;
+    background-color: #0e0e16;
     -webkit-font-smoothing: antialiased;
     -webkit-user-select: none;
     user-select: none;
@@ -10,20 +10,21 @@ body{
 }
 
 .moveGradient {
-  animation: moveGradient 13s linear infinite;
+  background-size: 400%;
+  animation: moveGradient 9s ease-in-out infinite
 }
 
 @keyframes moveGradient {
-  0% {
-    background-position: 0%;
+  0%,to {
+    background-position: 0% 50%
   }
-  100% {
-    background-position: 200%;
+  50% {
+    background-position: 100% 50%
   }
 }
 
 .ZoomAnim {
-    animation: Zoom 0.4s ease;
+    animation: Zoom 0.4s ease-in-out;
 }
 
 @keyframes Zoom {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Assets - Backgrounds
@@ -20,7 +20,12 @@ import StarterPackMini from "@/assets/Mini-Icons/starterpackmini.jpg";
 // Zustand
 import { useOffersStore } from "@/Zustand/OffersStore";
 
-const Plans: React.FC = () => {
+// Props
+interface PlansProps {
+    sendHex: (hex: string) => void;
+}
+
+const Plans: React.FC<PlansProps> = ({ sendHex }) => {
 const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
 
     const plans = [
@@ -40,6 +45,7 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
             image: ContributorBG,
             miniImg: ContributorMini,
             redirect: "https://youtu.be/E4WlUXrJgy4?si=RsDFnfJ2p5U6Jweh",
+            accent: "#40c885",
         },
         {
             offerId: "66ccca5d706dc",
@@ -57,6 +63,7 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
             image: ContributorplusBG,
             miniImg: ContributorPMini,
             redirect: "https://youtu.be/E4WlUXrJgy4?si=RsDFnfJ2p5U6Jweh",
+            accent: "#4948ca",
         },
         {
             offerId: "66cccbf0e2ea8",
@@ -74,6 +81,7 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
             image: ContributorplusplusBG,
             miniImg: ContributorPPMini,
             redirect: "https://youtu.be/E4WlUXrJgy4?si=RsDFnfJ2p5U6Jweh",
+            accent: "#c83c48",
         },
         {
             offerId: "66ccc429a130",
@@ -92,6 +100,7 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
             image: ContributorMonthlyBG,
             miniImg: ContributorMMini,
             redirect: "https://youtu.be/E4WlUXrJgy4?si=RsDFnfJ2p5U6Jweh",
+            accent: "#c8783f",
         },
         {
             offerId: "66cccd642h52",
@@ -109,6 +118,7 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
             image: StarterPackBG,
             miniImg: StarterPackMini,
             redirect: "https://youtu.be/E4WlUXrJgy4?si=RsDFnfJ2p5U6Jweh",
+            accent: "#7b43c8",
         },
         {
             offerId: "66cccc426f300",
@@ -123,23 +133,28 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
             image: DonatorBG,
             miniImg: DonatorMini,
             redirect: "https://youtu.be/E4WlUXrJgy4?si=RsDFnfJ2p5U6Jweh",
+            accent: "#37c837",
         },
     ];
+
+    useEffect(() => {
+        sendHex(plans[OfferIndex].accent);
+    }, [OfferIndex]);
 
     const DiscountedPrice = plans[OfferIndex].discount > 0 ? Number(plans[OfferIndex].price - plans[OfferIndex].price * (plans[OfferIndex].discount / 100)).toFixed(2) : null;
 
     return (
-        <div className="relative flex items-center w-full md:w-[73.75rem] h-auto bg-black/20 rounded-[0.8rem] overflow-hidden">
+        <div className="relative flex items-center w-full md:w-295 h-auto bg-black/15 rounded-xl overflow-hidden">
         <AnimatePresence mode="wait">
             <motion.div 
-            className="relative ml-4.5 flex flex-col justify-start items-start w-[80%] h-[94%] bg-black/20 rounded-[0.7rem] overflow-hidden"
+            className="relative ml-4.5 flex flex-col justify-start items-start w-[82%] h-[94%] bg-black/20 rounded-lg overflow-hidden"
             key={OfferIndex}
             initial={{ y: -600 }}
             animate={{ y: 0 }}
             exit={{ y: 600 }}
             transition={{
               type: "spring",
-              stiffness: 150,
+              stiffness: 140,
               damping: 16
             }}
             >
@@ -147,7 +162,7 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
                 <span className="text-white/60 font-bold text-[1.15rem] leading-6 md:text-[1.25rem]">
                     {plans[OfferIndex].type}
                 </span>
-                <h1 className="text-white font-[700] uppercase text-[2rem] leading-8 md:text-[2.7rem]">
+                <h1 className="text-white font-bold uppercase text-[2rem] leading-8 md:text-[2.7rem]">
                     {plans[OfferIndex].name}
                 </h1>
 
@@ -174,12 +189,12 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
 
                 <div className="absolute left-8 bottom-8 flex flex-col">
                     <div className="flex flex-row gap-1">
-                        <span className={`font-[600] text-white opacity-95 text-lg ${DiscountedPrice ? "text-white/50 line-through font-medium" : "" }`}>${plans[OfferIndex].price}</span>
+                        <span className={`font-semibold text-white opacity-95 text-lg ${DiscountedPrice ? "text-white/50 line-through font-medium" : "" }`}>${plans[OfferIndex].price}</span>
                         { DiscountedPrice &&
-                        <span className="font-[600] text-white opacity-95 text-lg">${DiscountedPrice}</span>
+                        <span className="font-semibold text-white opacity-95 text-lg">${DiscountedPrice}</span>
                         }
                         { DiscountedPrice &&
-                        <div className="mt-1 bg-[#d9544ff3] rounded-[10px] text-[0.8rem] flex justify-center items-center pl-1.5 pr-1.5 text-white/90 font-[600] h-[1.125rem]">
+                        <div className="mt-1 bg-[#d9544ff3] rounded-[10px] text-[0.8rem] flex justify-center items-center pl-1.5 pr-1.5 text-white/90 font-semibold h-4.5">
                             -{plans[OfferIndex].discount}%
                         </div>
                         }
@@ -188,7 +203,7 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
                     onClick={() => window.open(plans[OfferIndex].redirect, "_blank")}
                     className="text-[#242424] bg-white opacity-95 border-none rounded-[10px] hover:bg-[#ffffffd2] transition p-3 text-center cursor-pointer"
                     >
-                        <span className="uppercase font-[800] text-sm opacity-80">Get {plans[OfferIndex].name}</span>
+                        <span className="uppercase font-extrabold text-sm opacity-80">Get {plans[OfferIndex].name}</span>
                     </button>
                 </div>
 
@@ -205,7 +220,7 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
                     <button
                     key={index}
                     onClick={() =>  setOfferIndex(index)}
-                    className="relative w-[84%] h-[5rem] rounded-lg bg-white/7 hover:bg-white/12 cursor-pointer transition flex flex-row items-center gap-2.5 px-3 overflow-hidden sm:justify-center"
+                    className="relative w-[84%] h-20 rounded-lg bg-white/5 hover:bg-white/10 group cursor-pointer transition-all flex flex-row items-center gap-2.5 px-2.5 overflow-hidden sm:justify-center"
                     >
                         { OfferIndex === index &&
                         <motion.div
@@ -230,6 +245,8 @@ const { OfferIndex, setOfferIndex, incrementOfferIndex } = useOffersStore();
                         <span className="hidden md:block text-white/90 z-10 text-[0.9rem] font-medium w-full">
                             {plan.name}
                         </span>
+
+                        <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/12 to-transparent rotate-4 blur-md translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
                     </button> 
                 ))}
             </div>
